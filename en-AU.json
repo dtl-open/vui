@@ -1,0 +1,581 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "piglet",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "exit"
+                    ]
+                },
+                {
+                    "name": "recordExpensesIntent",
+                    "slots": [
+                        {
+                            "name": "addCommand",
+                            "type": "AddCommand"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "Currency",
+                            "samples": [
+                                "{amount}"
+                            ]
+                        },
+                        {
+                            "name": "expenseType",
+                            "type": "ExpenseType",
+                            "samples": [
+                                "{expenseType} type"
+                            ]
+                        },
+                        {
+                            "name": "expenseDate",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "I think {expenseDate}",
+                                "It was on {expenseDate}",
+                                "I think it is {expenseDate}",
+                                "{expenseDate}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{addCommand} {amount} under {expenseType}",
+                        "{addCommand} {amount}",
+                        "{addCommand} {amount} expense of {expenseType}",
+                        "{addCommand} {amount} expense under {expenseType}",
+                        "{addCommand} {amount} expense",
+                        "{addCommand} {amount} expense of {expenseType} on {expenseDate}",
+                        "{addCommand} {amount} expense for {expenseType} on {expenseDate}",
+                        "{addCommand} {amount} expense under {expenseType} on {expenseDate} ",
+                        "{addCommand} an expense",
+                        "{addCommand} {amount} for {expenseType}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "ExpenseType",
+                    "values": [
+                        {
+                            "id": "MEDICAL",
+                            "name": {
+                                "value": "Medical",
+                                "synonyms": [
+                                    "Health",
+                                    "Doctor",
+                                    "Pharmacy",
+                                    "Dentist",
+                                    "Medicine",
+                                    "Vitamins",
+                                    "Medical",
+                                    "Physio",
+                                    "Physiotherapist",
+                                    "Massage",
+                                    "Chiropracter",
+                                    "Osteopath",
+                                    "Osteo",
+                                    "Acupuncture",
+                                    "Optometrist",
+                                    "ContactLenses",
+                                    "Glasses"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "UTILITY",
+                            "name": {
+                                "value": "Utilities",
+                                "synonyms": [
+                                    "Electricity",
+                                    "Gas",
+                                    "Power",
+                                    "Phone",
+                                    "Internet",
+                                    "Broadband",
+                                    "Mobilephone",
+                                    "Water"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "FOOD",
+                            "name": {
+                                "value": "Food",
+                                "synonyms": [
+                                    "Groceries",
+                                    "Restaurants",
+                                    "Takeaways",
+                                    "Coffee",
+                                    "Café",
+                                    "Bakery",
+                                    "Alcohol",
+                                    "BottleStore",
+                                    "Pub",
+                                    "Bar",
+                                    "Snacks",
+                                    "Schoollunch",
+                                    "Meal"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "ENTERTAINMENT",
+                            "name": {
+                                "value": "Entertainment",
+                                "synonyms": [
+                                    "Airfares",
+                                    "Flights",
+                                    "Show",
+                                    "Trip",
+                                    "Vacation",
+                                    "holiday",
+                                    "subscriptions",
+                                    "movies",
+                                    "Technology",
+                                    "Computer",
+                                    "Concert",
+                                    "Sportsevent",
+                                    "Rugby",
+                                    "Cricket",
+                                    "Basketball",
+                                    "Netball",
+                                    "Football",
+                                    "Soccer",
+                                    "Tennis",
+                                    "Magazines"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "HOUSING",
+                            "name": {
+                                "value": "Housing",
+                                "synonyms": [
+                                    "Rates",
+                                    "TV",
+                                    "SkyTV",
+                                    "Netflix",
+                                    "Rent",
+                                    "Mortgage",
+                                    "HouseMaintenance",
+                                    "Rubbish",
+                                    "Lawnmowing",
+                                    "Alarm",
+                                    "Furniture",
+                                    "Cleaner",
+                                    "Garden",
+                                    "Nails"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "SAVINGS",
+                            "name": {
+                                "value": "Savings",
+                                "synonyms": [
+                                    "Retirement",
+                                    "TermDeposit",
+                                    "Savings",
+                                    "Taxfund",
+                                    "Investments"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "DEBT",
+                            "name": {
+                                "value": "Debt",
+                                "synonyms": [
+                                    "Studentloans",
+                                    "Creditcard",
+                                    "Personalloans",
+                                    "Childsupport",
+                                    "Alimony"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "TRANSPORT",
+                            "name": {
+                                "value": "Transport",
+                                "synonyms": [
+                                    "Bus",
+                                    "Train",
+                                    "Petrol",
+                                    "Car",
+                                    "Mechanic",
+                                    "CarService",
+                                    "Ferry",
+                                    "CarInsurance",
+                                    "CarMaintenance",
+                                    "Fuel",
+                                    "CarRegistration",
+                                    "WarrantofFitness",
+                                    "RoadUserCharges",
+                                    "Panelbeater",
+                                    "Parkingfines",
+                                    "SpeedingFines",
+                                    "Parkingtickets",
+                                    "Uber",
+                                    "Roadtolls",
+                                    "Tyres",
+                                    "Parking",
+                                    "Motorbike",
+                                    "Bike"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "PERSONAL",
+                            "name": {
+                                "value": "Personal",
+                                "synonyms": [
+                                    "Toiletries",
+                                    "Beauty",
+                                    "Eyebrows",
+                                    "Hair",
+                                    "Spa",
+                                    "Haircut",
+                                    "Hairdresser",
+                                    "Barber",
+                                    "Clothing",
+                                    "Laundry",
+                                    "Laudromat",
+                                    "DryCleaner",
+                                    "Gym",
+                                    "Massage",
+                                    "Manicure",
+                                    "Pedicure",
+                                    "Facial",
+                                    "Beauty",
+                                    "Nails"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "EDUCATION",
+                            "name": {
+                                "value": "Education",
+                                "synonyms": [
+                                    "SchoolFees",
+                                    "SchoolTrips",
+                                    "Schoolsupplies",
+                                    "Stationery",
+                                    "Courses",
+                                    "Training",
+                                    "University",
+                                    "Varsity",
+                                    "Uni",
+                                    "Polytech",
+                                    "Uniform"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "INSUARANCE",
+                            "name": {
+                                "value": "Insurance",
+                                "synonyms": [
+                                    "HouseInsurance",
+                                    "Healthinsurance",
+                                    "Dentalinsurance",
+                                    "PersonalIdemnityinsurance",
+                                    "LifeInsurance",
+                                    "FuneralInsurance",
+                                    "MedicalInsurance"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "OTHER",
+                            "name": {
+                                "value": "Other",
+                                "synonyms": [
+                                    "gift",
+                                    "PetCare",
+                                    "Birthdays",
+                                    "Present",
+                                    "Charity",
+                                    "Donation"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CHILDCARE",
+                            "name": {
+                                "value": "Childcare",
+                                "synonyms": [
+                                    "Babysitting",
+                                    "Babysitter",
+                                    "Daycare",
+                                    "Afterschoolcare",
+                                    "tutoring"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Currency",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "$100"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "$1003.84"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "$.03"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "$10.11"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AddCommand",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "please"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I like to create"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I want to create"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "create"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "please track"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "track"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I want to track"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "can you record"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "can you add"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "please record"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "please add"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "let me record"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "let me add"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "record"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "add"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I like to record"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I like to add"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I spent"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I want to record"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I want to add"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "recordExpensesIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "addCommand",
+                            "type": "AddCommand",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "amount",
+                            "type": "Currency",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.11388338441.446792698618"
+                            }
+                        },
+                        {
+                            "name": "expenseType",
+                            "type": "ExpenseType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.553978445777.1386330032816"
+                            },
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.344716425179.34335474901.302771238603"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "expenseDate",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.414399794350.658658939172"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.553978445777.1386330032816",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What is the type of expense?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.11388338441.446792698618",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What is the amount?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.344716425179.34335474901.302771238603",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Can you please tell me a valid expense type"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.1390010725841",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Sure, shall I proceed and record {amount} expense under {expenseType} for {expenseDate}"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.414399794350.658658939172",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please enter a date on which you spent this amount"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "when did you make this spend"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "when"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "tell me the date for this expense"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "when did you spend that"
+                    }
+                ]
+            }
+        ]
+    }
+}
